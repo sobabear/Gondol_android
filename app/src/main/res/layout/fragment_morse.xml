@@ -1,14 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<!--<androidx.constraintlayout.widget.ConstraintLayout-->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Fragments.MorseFragment">
+    android:background="@color/clubhouse"
+    android:visibility="visible">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
+        android:id="@+id/morseTitle"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="64dp"
+        android:text="Morse"
+        android:textColor="@color/black"
+        android:textAlignment="textStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        tools:layout_editor_absoluteX="20dp" />
 
-</FrameLayout>
+    <EditText
+        android:id="@+id/morseEditText"
+        android:background="@drawable/rounded_corner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:gravity="top|left"
+        android:textColor="@color/black"
+        android:inputType="textMultiLine"
+        android:lines="5"
+        android:scrollHorizontally="false"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/morseTitle" />
+
+    <TextView
+        android:id="@+id/morseTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginRight="32dp"
+        android:textColor="@color/black"
+        android:alpha="0.5"
+        android:background="@drawable/rounded_corner"
+        android:textSize="24sp"
+        app:layout_constraintTop_toBottomOf="@id/morseEditText"
+        tools:layout_editor_absoluteX="32dp" />
+
+    <Button
+        android:id="@+id/morseCopy"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="#00FFFFFF"
+        android:text="Copy"
+        android:textColor="#605E5E"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@id/morseTextView" />
+</androidx.constraintlayout.widget.ConstraintLayout>
